@@ -1,6 +1,6 @@
 ## SETUP
 
-This app was developed on linux so mac commands will be similar:
+Note: This app was developed on Ubuntu
 
 To setup postgres:
 ```
@@ -27,7 +27,7 @@ bin/rails test
 
 ```
 
-###Info
+### Info
 
 ProductSearch is a simple Rails application that enables a user to search Semantics3's product database.
 
