@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: query_caches
+#
+#  id         :integer          not null, primary key
+#  query      :string
+#  results    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: MyString
+  results: MyText
+
+two:
+  query: MyString
+  results: MyText

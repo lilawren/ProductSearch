@@ -8,9 +8,15 @@ class Sem3SearchService
   def execute
     return [] unless params[:search]
 
-    setup
-    construct_query
-    get_products
+    # check the cache first
+    if cached = QueryCache.where(query: params[:search].downcase.strip).first
+      cached.results
+    # otherwise do the query
+    else
+      setup
+      construct_query
+      get_products
+    end
   end
 
   private
@@ -30,7 +36,10 @@ class Sem3SearchService
     r = @sem3.get_products()
 
     if r['code'].eql?('OK')
-      r['results']
+      # store result in cache
+      @results = r['results']
+      QueryCache.create(query: params["search"].downcase.strip, results: @results)
+      @results
     else
       if r['message']
         m = JSON.parse(r['message'])
