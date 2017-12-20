@@ -5,9 +5,7 @@ Note: This app was developed on Ubuntu
 To setup postgres:
 ```
 sudo apt-get update
-
 sudo apt-get install postgresql postgresql-contrib
-
 sudo -i -u postgres
 createuser –interactive
 - Use settings:
@@ -24,7 +22,6 @@ First cd to the project folder, ProductSearch
 ```
 bin/rails db:environment:set RAILS_ENV=test
 bin/rails test
-
 ```
 
 ### Info
