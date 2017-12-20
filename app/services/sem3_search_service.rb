@@ -37,9 +37,9 @@ class Sem3SearchService
 
     if r['code'].eql?('OK')
       # store result in cache
-      @results = r['results']
-      QueryCache.create(query: params["search"].downcase.strip, results: @results)
-      @results
+      results = r['results']
+      QueryCache.create(query: params["search"].downcase.strip, results: results)
+      results
     else
       if r['message']
         m = JSON.parse(r['message'])

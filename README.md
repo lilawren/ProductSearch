@@ -1,3 +1,34 @@
+## SETUP
+
+This app was developed on linux so mac commands will be similar:
+
+To setup postgres:
+```
+sudo apt-get update
+
+sudo apt-get install postgresql postgresql-contrib
+
+sudo -i -u postgres
+createuser –interactive
+- Use settings:
+    - username: ProductSearch
+    - sudo: yes
+createdb ProductSearch_development
+createdb ProductSearch_production
+createdb ProductSearch_test
+```
+
+Running tests:
+
+First cd to the project folder, ProductSearch
+```
+bin/rails db:environment:set RAILS_ENV=test
+bin/rails test
+
+```
+
+###Info
+
 ProductSearch is a simple Rails application that enables a user to search Semantics3's product database.
 
 ---
